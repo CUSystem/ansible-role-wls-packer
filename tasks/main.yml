@@ -1,0 +1,7 @@
+---
+
+-- include: pack.yml
+   when: packer_pack_it
+
+-- include: unpack.yml
+   when: packer_unpack_it

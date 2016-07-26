@@ -1,0 +1,8 @@
+---
+
+  - file: path="{{ packed_template_path }}" state=absent
+  - name: pack the domain
+    command: "{{ mw_home }}/oracle_common/common/bin/pack.sh -domain {{ domain_home }} -managed true -template {{ packed_template_path }} -template_name EDQ-Packed"
+
+   - name: bring the template over
+     fetch: src="{{ packed_template_path }}" dest=/tmp/{{ packed_template_name }} flat=yes 
