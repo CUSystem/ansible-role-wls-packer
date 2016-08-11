@@ -1,6 +1,14 @@
 ---
 
+  - name: ensure template path exists
+    file:
+      path:  "{{ packed_template_path }}"
+      state: directory
+
   - name: copy over files to managed servers
-    copy: src=/tmp/{{ packed_template_name }} dest="{{ packed_template_path }}" 
+    copy: 
+      src:  /tmp/{{ packed_template_name }}.jar
+      dest: "{{ packed_template_path }}" 
+
   - name: unpack the template
-    command: "{{ mw_home }}/oracle_common/common/bin/unpack.sh -domain {{ domain_home }} -template {{ packed_template_path }}"
+    command: "{{ mw_home }}/oracle_common/common/bin/unpack.sh -domain {{ domain_home }} -template {{ packed_template_path }}/{{ packed_template_name }}.jar"
