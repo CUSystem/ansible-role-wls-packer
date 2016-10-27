@@ -10,8 +10,9 @@ oracle_home: "{{ mw_home }}/oracle_common"
 wl_home: "{{ mw_home }}/wlserver"
 mw_installer_folder: "{{ oracle_base }}/installer"
 
+domain_base: /home/oracle
 domain_name: WLSDomain
-domain_home: "{{ oracle_base }}/user_projects/domains/{{ domain_name }}"
+domain_home: "{{ domain_base }}/user_projects/domains/{{ domain_name }}"
 
 pack_action: true
 packed_template_name: "{{ domain_name }}-Packed-{{ ansible_date_time.date }}"
