@@ -16,5 +16,5 @@ domain_home: "{{ domain_base }}/user_projects/domains/{{ domain_name }}"
 app_home: "{{ domain_base }}/user_projects/applications/{{ domain_name }}"
 
 pack_action: true
-packed_template_name: "{{ domain_name }}-Packed-{{ ansible_date_time.date }}"
+packed_template_name: "{{ domain_name }}-Packed"
 packed_template_path: "{{ mw_installer_folder }}/templates"
