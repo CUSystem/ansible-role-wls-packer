@@ -1,7 +1,7 @@
 ---
 
-- include: pack.yml
+- include_tasks: pack.yml
   when: pack_action == "pack"
 
-- include: unpack.yml
+- include_tasks: unpack.yml
   when: pack_action == "unpack"
